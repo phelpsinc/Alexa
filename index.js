@@ -1,3 +1,7 @@
+// Name: Chuck Phelps
+// Version 0.1 
+// Credit to Big Nerd Ranch
+/* */
 'use strict'; var
 APP_ID = undefined;
 var AlexaSkill = require('AlexaSkill');
@@ -8,3 +12,9 @@ var GreeterService = function() {
 }
 
 GreeterService.prototype = Object.create(AlexaSkill.prototype)
+
+var helloResponseFunction = function(intent, session, response) {
+    response.tell (SPEECH_OUTPUT);
+};
+
+GreeterService.prototype.eventHandlers.onLaunch = helloResponseFunction;
