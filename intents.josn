@@ -1,0 +1,9 @@
+{
+    "intent": "PythonForever"
+    "slots: [
+        {
+            "name": "PythonForever"
+            "type": "PythonForever"
+        }
+      ]
+}
