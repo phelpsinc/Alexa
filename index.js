@@ -3,9 +3,9 @@
 // Credit to Big Nerd Ranch
 /* */
 'use strict'; var
-APP_ID = undefined;
+var APP_ID = amzn1.ask.skill.4f5d93b8-4800-4fb6-9a57-92566010ca1c;
 var AlexaSkill = require('AlexaSkill');
-var SPEECH_OUTPUT = 'Hello';
+var SPEECH_OUTPUT = 'Chenchu is the man of steel';
 
 var GreeterService = function() {
     AlexaSkill.call(this, APP_ID);
@@ -18,3 +18,12 @@ var helloResponseFunction = function(intent, session, response) {
 };
 
 GreeterService.prototype.eventHandlers.onLaunch = helloResponseFunction;
+
+GreeterService.prototype.intentHandlers = {
+    'HelloWorldIntent': helloResponseFunction
+}
+
+exports.handler = fucntion(event, context) {
+    var greeterService = new GreeterService();
+    greeterService.execute(event, context);
+};
